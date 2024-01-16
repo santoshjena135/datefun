@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <div id="date-text">DATE?</div>
+    <button id="randomButtonYes" >YES <3</button>
+    <button id="randomButton" >NO!!!</button>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #date-text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        
+        #randomButtonYes {
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const button = document.getElementById('randomButton');
+
+
+        function moveBtn(){
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+        
+            const randomX = Math.random() * (screenWidth - button.offsetWidth);
+            const randomY = Math.random() * (screenHeight - button.offsetHeight);
+        
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+button.addEventListener('mouseenter', () => {
+        moveBtn();
+});
+
+button.addEventListener('click', () => {
+    //alert("I know you are some sort of developer who managed to remove the mousehover event listener, but I have already triggered the YES button POST call xD. Let's go!");
+    moveBtn();
+});
+
+
+const yesbtn = document.getElementById('randomButtonYes');
+    yesbtn.addEventListener('click', () => {
+
+        window.location.href = '/hello';
+    alert("Lets go!")
+});
+    </script>
+    </body>
+</html>
